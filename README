@@ -1,0 +1,28 @@
+
+  tiny85_bcm
+ 
+ 
+ 
+ 	- ATtiny85 Binary Code Modulation library
+ 
+ 
+ 	
+ 	- implements an 8bit BCM (256 possible levels) 
+ 	  with ~490Hz BCM frequency (~2ms period), and morhping step 2
+ 	  this means that the time it takes to go from level 0 to level 256 is ~1 second
+ 
+ 	  to modify use this formulas:
+
+ 	       F_TIMER = F_BCM * ( 2^bcm_bits -1 )
+ 
+ 	       (!) F_TIMER is the clock frequency after a possible prescalling 
+ 
+ 
+ 
+ 	- after included, 
+ 		- call bcm_init() and then enable interrupts
+ 		- in the main loop call bcm_morphing()
+ 
+ 
+   	- developed (and tested) for ATtiny85 running 
+ 	  at 8 MHz from its internal oscillator
